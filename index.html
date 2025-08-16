@@ -1,21 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Scroll-Driven Mapbox</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
-<link href="css/style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Scroll-Driven Mapbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Mapbox CSS and JS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+        <!-- Left Column: Scrollable Panels (Desktop) / Top Row (Mobile) -->
+        <div class="panels-container">
+            <div class="panel" data-panel="1">
+                <h2>Welcome to Colorado</h2>
+                <p>Discover the diverse landscapes and vibrant cities of the Centennial State. From the majestic Rocky Mountains to the sweeping plains, Colorado offers a unique blend of natural beauty and urban sophistication.</p>
+                <p>Scroll through to explore Denver, Colorado Springs, Fort Collins, and Grand Junction - each with their own distinct character and attractions. The map will guide you through each region as you journey through the content.</p>
+            </div>
+            
+            <div class="panel" data-panel="2">
+                <h2>Welcome to Denver</h2>
+                <p>Denver, the Mile High City, is Colorado's capital and largest city. Located at an elevation of 5,280 feet above sea level, Denver serves as the cultural, economic, and transportation hub of the Rocky Mountain region.</p>
+                <p>Known for its vibrant downtown, craft breweries, and proximity to the Rocky Mountains, Denver offers a perfect blend of urban sophistication and outdoor adventure. The city's diverse neighborhoods and rich history make it a fascinating place to explore.</p>
+            </div>
+            
+            <div class="panel" data-panel="3">
+                <h2>Discover Colorado Springs</h2>
+                <p>Colorado Springs, nestled at the base of Pikes Peak, is a city of natural wonders and outdoor recreation. Home to the famous Garden of the Gods, this city offers stunning red rock formations and breathtaking mountain views.</p>
+                <p>With its military heritage, Olympic training facilities, and proximity to world-class hiking and climbing destinations, Colorado Springs embodies the spirit of adventure that defines Colorado's Front Range.</p>
+            </div>
+            
+            <div class="panel" data-panel="4">
+                <h2>Explore Fort Collins</h2>
+                <p>Fort Collins, located in northern Colorado, is a vibrant college town known for its craft beer culture and outdoor lifestyle. Home to Colorado State University, this city combines academic excellence with mountain recreation.</p>
+                <p>The historic Old Town district, extensive bike trails, and proximity to Rocky Mountain National Park make Fort Collins a perfect destination for those seeking both cultural experiences and outdoor adventures.</p>
+            </div>
+            
+            <div class="panel" data-panel="5">
+                <h2>Visit Grand Junction</h2>
+                <p>Grand Junction, situated in western Colorado's Grand Valley, is the gateway to some of the state's most spectacular landscapes. Surrounded by red rock canyons and desert mesas, this city offers a different perspective on Colorado's natural beauty.</p>
+                <p>Known for its wine country, mountain biking trails, and proximity to Colorado National Monument, Grand Junction showcases the diverse geography that makes Colorado such a remarkable state to explore.</p>
+            </div>
+            
+            <!-- Panel Navigation Indicators -->
+            <div class="panel-indicators">
+                <div class="panel-indicator active" data-panel="1"></div>
+                <div class="panel-indicator" data-panel="2"></div>
+                <div class="panel-indicator" data-panel="3"></div>
+                <div class="panel-indicator" data-panel="4"></div>
+                <div class="panel-indicator" data-panel="5"></div>
+            </div>
+        </div>
+        
+        <!-- Right Column: Map (Desktop) / Bottom Row (Mobile) -->
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
 
-  <div id="map"></div>
-
-  <script src="js/map.js?v=2.9"></script>
-
+    <!-- Custom JS -->
+    <script src="js/map.js"></script>
+    <script src="js/scroll-trigger.js"></script>
 </body>
 </html>
