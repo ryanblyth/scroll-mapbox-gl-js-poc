@@ -43,12 +43,7 @@ body {
     z-index: 1;
 }
 
-/* On mobile, panels take half viewport height */
-@media (max-width: 768px) {
-    .panel {
-        height: 50vh;
-    }
-}
+
 
 .panel h2 {
     color: #2c3e50;
@@ -91,11 +86,15 @@ body {
     
     .panels-container {
         order: 1;
-        height: auto; /* Let content determine height */
+        position: relative;
+        padding-top: 50vh;
+        /* Keep normal document flow for ScrollTrigger */
     }
     
     .panel {
         padding: 2rem;
+        height: 50vh; /* Half viewport height on mobile */
+        /* Keep panels in document flow */
     }
     
     .panel h2 {
@@ -110,14 +109,22 @@ body {
     
     .map-container {
         order: 2;
-        position: relative; /* Reset to relative on mobile */
+        position: fixed; /* Fixed position for mobile */
+        bottom: 0;
+        left: 0;
+        right: 0;
         height: 50vh; /* Half viewport height on mobile */
-        min-height: 50vh;
+        z-index: 100;
     }
     
     #map {
         height: 50vh; /* Match container height on mobile */
     }
+    
+    /* Add padding to body to account for fixed map */
+    /* body {
+        padding-bottom: 50vh;
+    } */
 }
 
 /* Tablet adjustments */
