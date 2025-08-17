@@ -5,11 +5,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaW5kZWxpYmUiLCJhIjoiY2xvM2k1Z25jMGZmbjJsbW9iM
 let map;
 
 // City data for the four major Colorado cities (panels 2-5)
+const isMobile = window.innerWidth <= 768; // Check if the window is less than 768px wide
+
 const majorCities = {
-    2: { name: "Denver", coordinates: [-104.9833786, 39.7375448], zoom: 10 },
-    3: { name: "Colorado Springs", coordinates: [-104.7607490, 38.8672553], zoom: 10 },
-    4: { name: "Fort Collins", coordinates: [-105.0648327, 40.5482164], zoom: 10 },
-    5: { name: "Grand Junction", coordinates: [-108.5674520, 39.0890618], zoom: 10 }
+    2: { name: "Denver", coordinates: [-104.9833786, 39.7375448], zoom: isMobile ? 8 : 9 },
+    3: { name: "Colorado Springs", coordinates: [-104.7607490, 38.8672553], zoom: isMobile ? 8 : 9 },
+    4: { name: "Fort Collins", coordinates: [-105.0648327, 40.5482164], zoom: isMobile ? 9 : 9 },
+    5: { name: "Grand Junction", coordinates: [-108.5674520, 39.0890618], zoom: isMobile ? 9 : 9 }
 };
 
 // Colorado overview coordinates (for intro panel)
@@ -110,7 +112,9 @@ function setupMapInteractions() {
             map.flyTo({
                 center: coloradoOverview.center,
                 zoom: coloradoOverview.zoom,
-                duration: 3000
+                duration: 3000,
+                essential: true, // Force animation even on mobile
+                maxDuration: 5000 // Ensure minimum animation time
             });
             
             // Show all major cities
@@ -126,7 +130,9 @@ function setupMapInteractions() {
         map.flyTo({
             center: cityData.coordinates,
             zoom: cityData.zoom,
-            duration: 3000
+            duration: 3000,
+            essential: true, // Force animation even on mobile
+            maxDuration: 5000 // Ensure minimum animation time
         });
         
         // Highlight the active city

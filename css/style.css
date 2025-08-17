@@ -87,13 +87,13 @@ body {
     .panels-container {
         order: 1;
         position: relative;
-        padding-top: 50vh;
+        padding-top: 33vh;
         /* Keep normal document flow for ScrollTrigger */
     }
     
     .panel {
         padding: 2rem;
-        height: 50vh; /* Half viewport height on mobile */
+        height: 66vh; /* Half viewport height on mobile */
         /* Keep panels in document flow */
     }
     
@@ -113,18 +113,13 @@ body {
         bottom: 0;
         left: 0;
         right: 0;
-        height: 50vh; /* Half viewport height on mobile */
+        height: 33vh; /* Half viewport height on mobile */
         z-index: 100;
     }
     
     #map {
-        height: 50vh; /* Match container height on mobile */
+        height: 33vh; /* Match container height on mobile */
     }
-    
-    /* Add padding to body to account for fixed map */
-    /* body {
-        padding-bottom: 50vh;
-    } */
 }
 
 /* Tablet adjustments */
