@@ -130,7 +130,7 @@ html {
 /* Panel navigation indicators (optional) */
 .panel-indicators {
     position: fixed;
-    right: 2rem;
+    left: calc(50vw - 2.75rem);
     top: 50%;
     transform: translateY(-50%);
     z-index: 20;
