@@ -30,12 +30,12 @@ body {
 .panel {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    min-height: 100vh; /* Minimum height, can grow with content */
     background: white;
     padding: 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Start content at top */
     align-items: flex-start;
     opacity: 1;
     transform: none;
@@ -93,7 +93,7 @@ body {
     
     .panel {
         padding: 2rem;
-        height: 66vh; /* Half viewport height on mobile */
+        min-height: 66vh; /* Minimum height, can grow with content on mobile */
         /* Keep panels in document flow */
     }
     

@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Create ScrollTrigger for each panel
         ScrollTrigger.create({
             trigger: panel,
-            start: "top center",
-            end: "bottom center",
+            start: "top 80%", // Trigger when panel top reaches 80% down viewport
+            end: "bottom 20%", // End when panel bottom reaches 20% up viewport
             onEnter: () => {
                 // Update indicators
                 updateIndicators(panelNumber);
