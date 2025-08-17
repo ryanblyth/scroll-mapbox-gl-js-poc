@@ -135,7 +135,7 @@ function highlightCity(cityName) {
         map.setFilter('colorado-cities-major', ['in', 'NAME', 'Denver', 'Colorado Springs', 'Fort Collins', 'Grand Junction']);
         map.setPaintProperty('colorado-cities-major', 'fill-color', 'rgba(52, 152, 219, 0.3)');
         map.setPaintProperty('colorado-cities-major', 'fill-outline-color', 'rgba(52, 152, 219, 0.6)');
-        map.setPaintProperty('colorado-cities-major', 'fill-opacity', 0.3);
+        map.setPaintProperty('colorado-cities-major', 'fill-opacity', 1);
     }, 4000);
 }
 
