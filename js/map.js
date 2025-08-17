@@ -16,8 +16,8 @@ const majorCities = {
 
 // Colorado overview coordinates (for intro panel)
 const coloradoOverview = {
-    center: [-105.0, 39.5],
-    zoom: 6
+    center: [-106.5, 39.5],
+    zoom: 5.5
 };
 
 // Load DOM and initialize map
@@ -79,26 +79,6 @@ function loadColoradoCities() {
             'fill-opacity': 0.3
         }
     });
-
-    // Add labels for major cities
-    // map.addLayer({
-    //     'id': 'colorado-cities-labels',
-    //     'type': 'symbol',
-    //     'source': 'colorado-cities',
-    //     'filter': ['in', 'NAME', 'Denver', 'Colorado Springs', 'Fort Collins', 'Grand Junction'],
-    //     'layout': {
-    //         'text-field': ['get', 'NAME'],
-    //         'text-font': ['Open Sans Bold'],
-    //         'text-size': 14,
-    //         'text-offset': [0, 0],
-    //         'text-anchor': 'center'
-    //     },
-    //     'paint': {
-    //         'text-color': '#ffffff',
-    //         'text-halo-color': '#000000',
-    //         'text-halo-width': 1
-    //     }
-    // });
 }
 
 // Function to setup map interactions based on panel scroll
